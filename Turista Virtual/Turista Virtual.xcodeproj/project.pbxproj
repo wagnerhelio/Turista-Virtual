@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3832012F219B465100442B55 /* DataBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3832012E219B465100442B55 /* DataBaseController.swift */; };
+		38320131219B484900442B55 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38320130219B484900442B55 /* MapViewController.swift */; };
+		38320133219B5E4800442B55 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38320132219B5E4800442B55 /* PhotoViewController.swift */; };
+		38320135219B608500442B55 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38320134219B608500442B55 /* Connection.swift */; };
+		38320137219B66BF00442B55 /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38320136219B66BF00442B55 /* Flickr.swift */; };
+		38320139219C578100442B55 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38320138219C578100442B55 /* CollectionViewCell.swift */; };
 		3892FF65219079C4002190C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3892FF64219079C4002190C1 /* AppDelegate.swift */; };
-		3892FF67219079C4002190C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3892FF66219079C4002190C1 /* ViewController.swift */; };
 		3892FF6A219079C4002190C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3892FF68219079C4002190C1 /* Main.storyboard */; };
 		3892FF6D219079C4002190C1 /* Turista_Virtual.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3892FF6B219079C4002190C1 /* Turista_Virtual.xcdatamodeld */; };
 		3892FF6F219079C6002190C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3892FF6E219079C6002190C1 /* Assets.xcassets */; };
@@ -16,9 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3832012E219B465100442B55 /* DataBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseController.swift; sourceTree = "<group>"; };
+		38320130219B484900442B55 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		38320132219B5E4800442B55 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		38320134219B608500442B55 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		38320136219B66BF00442B55 /* Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
+		38320138219C578100442B55 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		3892FF61219079C4002190C1 /* Turista Virtual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Turista Virtual.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3892FF64219079C4002190C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3892FF66219079C4002190C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3892FF69219079C4002190C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3892FF6C219079C4002190C1 /* Turista_Virtual.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Turista_Virtual.xcdatamodel; sourceTree = "<group>"; };
 		3892FF6E219079C6002190C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,9 +67,14 @@
 			isa = PBXGroup;
 			children = (
 				3892FF64219079C4002190C1 /* AppDelegate.swift */,
-				3892FF66219079C4002190C1 /* ViewController.swift */,
-				3892FF68219079C4002190C1 /* Main.storyboard */,
+				38320130219B484900442B55 /* MapViewController.swift */,
+				38320132219B5E4800442B55 /* PhotoViewController.swift */,
+				38320138219C578100442B55 /* CollectionViewCell.swift */,
+				3832012E219B465100442B55 /* DataBaseController.swift */,
+				38320134219B608500442B55 /* Connection.swift */,
+				38320136219B66BF00442B55 /* Flickr.swift */,
 				3892FF6E219079C6002190C1 /* Assets.xcassets */,
+				3892FF68219079C4002190C1 /* Main.storyboard */,
 				3892FF70219079C6002190C1 /* LaunchScreen.storyboard */,
 				3892FF73219079C6002190C1 /* Info.plist */,
 				3892FF6B219079C4002190C1 /* Turista_Virtual.xcdatamodeld */,
@@ -138,9 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3892FF67219079C4002190C1 /* ViewController.swift in Sources */,
 				3892FF65219079C4002190C1 /* AppDelegate.swift in Sources */,
+				38320135219B608500442B55 /* Connection.swift in Sources */,
+				38320139219C578100442B55 /* CollectionViewCell.swift in Sources */,
+				3832012F219B465100442B55 /* DataBaseController.swift in Sources */,
 				3892FF6D219079C4002190C1 /* Turista_Virtual.xcdatamodeld in Sources */,
+				38320131219B484900442B55 /* MapViewController.swift in Sources */,
+				38320137219B66BF00442B55 /* Flickr.swift in Sources */,
+				38320133219B5E4800442B55 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

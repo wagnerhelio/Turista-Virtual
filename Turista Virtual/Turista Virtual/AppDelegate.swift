@@ -13,9 +13,15 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var databaseController = DataBaseController(modelName: "Turista_Virtual")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        databaseController.load()
+        let navigationController = window?.rootViewController as! UINavigationController
+        let mapViewController = navigationController.topViewController as! MapViewController
+        
+        mapViewController.databaseController = databaseController
         // Override point for customization after application launch.
         return true
     }
