@@ -40,7 +40,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="RCi-Zm-VNU" id="EAJ-bm-nnv"/>
-                        <segue destination="Mv3-oZ-EbN" kind="show" identifier="photo" id="0AE-fo-eGd"/>
+                        <segue destination="Mv3-oZ-EbN" kind="show" identifier="photoviewcontroller" id="0AE-fo-eGd"/>
                     </connections>
                 </viewController>
                 <pongPressGestureRecognizer allowableMovement="15" minimumPressDuration="0.5" id="84p-1x-fqD"/>
@@ -51,7 +51,7 @@
         <!--Photo View Controller-->
         <scene sceneID="mmo-Ey-YgC">
             <objects>
-                <viewController id="Mv3-oZ-EbN" customClass="PhotoViewController" customModule="Turista_Virtual" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="photo" id="Mv3-oZ-EbN" customClass="PhotoViewController" customModule="Turista_Virtual" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jAS-Ua-d6m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +75,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="7nl-eG-1Tx" customClass="CollectionViewCell" customModule="Turista_Virtual" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="photo" id="7nl-eG-1Tx" customClass="CollectionViewCell" customModule="Turista_Virtual" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">

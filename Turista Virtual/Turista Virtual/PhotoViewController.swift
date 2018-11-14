@@ -27,10 +27,13 @@ class PhotoViewController: UIViewController,UICollectionViewDataSource,UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInitialView()
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        collecitonView.delegate = self
+        collecitonView.dataSource = self
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        try? nsfetchedResultsController.performFetch()
     }
     
     // MARK: - Exe override func viewDidLoad
@@ -44,7 +47,7 @@ class PhotoViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let prototypeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! CollectionViewCell
+        let prototypeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "photo", for: indexPath) as! CollectionViewCell
         prototypeCell.initWithPhoto(recievedPhotoInstance: (nsfetchedResultsController.fetchedObjects![indexPath.row]))
         return prototypeCell
     }

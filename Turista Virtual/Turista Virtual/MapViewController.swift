@@ -38,7 +38,7 @@ class MapViewController: UIViewController,MKMapViewDelegate,NSFetchedResultsCont
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "photoCollection"{
+        if segue.identifier == "photoviewcontroller"{
             try? nsfetchedResultsController.performFetch()
             let destPhoto = segue.destination as? PhotoViewController
             let coords = sender as! MKAnnotation
@@ -135,7 +135,7 @@ class MapViewController: UIViewController,MKMapViewDelegate,NSFetchedResultsCont
         if isEditingStatus{
             DeletePin(view.annotation, mapView)
         } else {
-            performSegue(withIdentifier: "photoCollection", sender: view.annotation)
+            performSegue(withIdentifier: "photoviewcontroller", sender: view.annotation)
             mapView.deselectAnnotation(view.annotation, animated: false)
         }
     }
