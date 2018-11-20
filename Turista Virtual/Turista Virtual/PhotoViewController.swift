@@ -22,7 +22,7 @@ class PhotoViewController: UIViewController,UICollectionViewDataSource,UICollect
     var nsfetchedResultsController: NSFetchedResultsController<Photo>!
     var pinSaved : Pin!
     var editMode: Bool = false
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,15 @@ class PhotoViewController: UIViewController,UICollectionViewDataSource,UICollect
         try? nsfetchedResultsController.performFetch()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUpFetchedResults()
+        try? nsfetchedResultsController.performFetch()
+        if (pinSaved.photos?.count)! < 1{
+            _ = Connection(coords: pinRecieved, databaseController: databaseController, pinToSave: pinSaved)
+        }
+    }
+    
     // MARK: - Exe override func viewDidLoad
     func setupInitialView(){
         mapView.addAnnotation(pinRecieved)
@@ -47,7 +56,7 @@ class PhotoViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let prototypeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "photo", for: indexPath) as! CollectionViewCell
+        let prototypeCell = collecitonView.dequeueReusableCell(withReuseIdentifier: "photo", for: indexPath) as! CollectionViewCell
         prototypeCell.initWithPhoto(recievedPhotoInstance: (nsfetchedResultsController.fetchedObjects![indexPath.row]))
         return prototypeCell
     }
@@ -57,7 +66,7 @@ class PhotoViewController: UIViewController,UICollectionViewDataSource,UICollect
             let object = nsfetchedResultsController.object(at: indexPath)
             databaseController.viewContext.delete(object)
             try? databaseController.viewContext.save()
-            collectionView.reloadData()
+            collecitonView.reloadData()
             try? nsfetchedResultsController.performFetch()
         }
     }
@@ -71,6 +80,25 @@ class PhotoViewController: UIViewController,UICollectionViewDataSource,UICollect
         // Pass the selected object to the new view controller.
     }
     */
+    func setUpFetchedResults() {
+        let nsfetchRequest:NSFetchRequest<Photo> = Photo.fetchRequest()
+        nsfetchRequest.sortDescriptors = []
+        nsfetchRequest.predicate = NSPredicate(format: "pin==%@", argumentArray: [pinSaved])
+        nsfetchedResultsController = NSFetchedResultsController(fetchRequest: nsfetchRequest, managedObjectContext: databaseController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        nsfetchedResultsController.delegate = self
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            collecitonView.insertItems(at: [newIndexPath!])
+            break
+        case .delete:
+            collecitonView.deleteItems(at: [indexPath!])
+        default:
+            return
+        }
+    }
     
     @IBAction func newCollection(_ sender: Any) {
         if let results = nsfetchedResultsController.fetchedObjects{

@@ -118,7 +118,6 @@
                     </view>
                     <connections>
                         <outlet property="collecitonView" destination="Bch-xp-4Cx" id="SvS-Ui-35H"/>
-                        <outlet property="collectionView" destination="Bch-xp-4Cx" id="VdI-Nu-cdd"/>
                         <outlet property="mapView" destination="5yd-lf-O3N" id="mdH-de-1Lb"/>
                         <outlet property="newCollection" destination="ajf-hH-YqX" id="WSq-5q-AqB"/>
                     </connections>
